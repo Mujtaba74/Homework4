@@ -1,0 +1,71 @@
+package homework4;
+
+
+	
+	public class removeDuplicate
+	{ // Static method to remove duplicates
+	public static char[] removeDuplicates(char[] in) {
+
+	   int[] keepers=new int[in.length];
+	   // creating array for keeping track of which elements to keep
+	   int ind=0; //starting the index for storing values in resulting array
+	   int bob=0;
+
+
+	   for(int i=0;i<in.length;i++)
+	   keepers[i]=1; 
+	   for(int i=0;i<in.length;i++)
+	   {
+	   if(keepers[i]!=0)
+	   {
+	   for(int j=i+1;j<in.length;j++)
+	   {
+
+	   if(in[i]==in[j])
+	   keepers[j]=0; //if values are repeating then will set the corresponding index to 0
+	   }
+	   }
+	   }
+	   for(int i=0;i<in.length;i++)
+	   {
+
+	   if(keepers[i]==1)
+	   bob++; //count the unique values for determining size of resulting array
+	   }
+	   // resulting array
+	   char[] result=new char[bob];
+	   for(int i=0;i<in.length;i++)
+	   {
+	   if(keepers[i]==1)
+	   {
+
+	   result[ind]=in[i]; //put values in resulting array
+	   ind++;
+	   }
+	   }
+
+	   return result;
+	}
+
+	// main method
+	public static void main(String[] args)
+	{
+	       // inputs
+	char test[] = {'b', 'd', 'a', 'b', 'f', 'a', 'g', 'a', 'a', 'f'}; //input array
+	int n = test.length;
+	System.out.print("Original: ");
+	for(int i=0;i<n;i++)
+	System.out.print(test[i]+",");
+
+	System.out.println();
+	       System.out.print("Result: ");
+	       //getting the output.
+	char test2[]=removeDuplicates(test);
+	n = test2.length;
+	for(int i=0;i<n;i++)
+	System.out.print(test2[i]+",");
+
+	}
+	}
+
+
