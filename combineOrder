@@ -1,0 +1,25 @@
+public class Orders {
+	
+	static int[] combineOrder(int[] order1, int[] order2) {
+		int result[]= new int[5];
+		
+		for(int i=0; i<5;i++) {
+			result[i] = order1[i] + order2[i];
+		}
+		
+		return result;
+	}
+
+	public static void main(String[] args) {
+		int order1[]= {0, 0, 3, 4, 7};
+		int order2[] = {0, 4, 0, 1, 2};
+		
+		int result[] = combineOrder(order1,order2);
+		System.out.println("Combined Order: ");
+		for(int i =0; i<5;i++) {
+			System.out.print(result[i]+" ");
+		}
+
+	}
+
+}
