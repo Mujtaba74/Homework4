@@ -1,0 +1,33 @@
+public class RemoveValue {
+
+	public static int[] removingaValue(int v, int[] in) {
+		int i, count = 0;
+		for(i=0;i<in.length;i++) {
+			if(in[i]==v) {
+				count++;
+			}
+		}
+		int out[] = new int[in.length-count];
+		int z = 0;
+		for(i = 0;i<in.length;i++) {
+			if(in[i]!=v) {
+				out[z++]= in[i];
+			}
+		}
+		return out;
+	}
+
+	public static void main(String[] args) {
+		
+		int in[] = {0,7,4,3,2,4,5,4,0,1,4,6};
+		int v = 4;
+		int out[] = removingaValue(v,in);
+		System.out.print("Resulting array after removing every " +v+": ");
+		for(int i=0;i<out.length;i++) {
+			System.out.print(out[i]+" ");
+		}
+		
+
+	}
+
+}
