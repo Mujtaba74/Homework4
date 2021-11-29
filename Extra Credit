@@ -1,0 +1,50 @@
+package lecture4;
+
+public class Vehicle {
+
+String make;
+String model;
+String color;
+String plate;
+int mpg;
+int year;
+
+public Vehicle(String make1, String model1, int year1, String color1,int mpg1, String plate1) {
+	make= make1;
+	model=model1;
+	year = year1;
+	color = color1; 
+	mpg = mpg1;
+	plate=plate1;
+}
+
+	public void refueling() {
+		System.out.println(color+ " " + make+ " " + year + " has been succefully refueled.");
+	}
+	
+public void parking() {
+	System.out.println(color + " "+ make+ " " + model+ " "  + year + " is parked in lot B.");
+	
+}
+
+	public void fuelecon() {
+		System.out.println(year+ " " + make+ " " + model + " "  + "averages " + mpg+ " miles per gallon.");
+		
+}
+	public void inspection() {
+		System.out.println(year+ " "+ make+ " "+ "Plate No. " + plate+" has failed inspection.");
+	}
+	
+	public static void main(String[] args) {
+		
+		Vehicle v1 = new Vehicle("Ferari", "Roma", 2021, "Red", 10, "AZY3266");
+		Vehicle v2 = new Vehicle("Honda", "Accord", 2009, "Blue", 25, "GBJ9043");
+		Vehicle v3 = new Vehicle("Toyota", "Highlander", 2015, "Black", 22, "JMP5434");
+		Vehicle v4 = new Vehicle("Nissan", "Maxima", 2004, "Silver", 20, "MXN8756");
+		v1.refueling();
+		v1.parking();
+		v2.refueling();
+		v3.fuelecon();
+		v4.inspection();
+	}
+}
